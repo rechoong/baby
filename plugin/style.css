@@ -20,7 +20,7 @@ nav.vertical ul li{display:block;}/* vertical menu */
 nav.horizontal ul li{display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*--- end reset code ---*/
-body{margin:0;padding:0;background:url(blurred.jpg) no-repeat;background-size:100% 100%;background-attachment: fixed; background-position: center;overflow-x : hidden; position: absolute; width: 100%;}
+body{margin:0;padding:0;background:url(../img/blurred.jpg) no-repeat;background-size:100% 100%;background-attachment: fixed; background-position: center;overflow-x : hidden; position: absolute; width: 100%;}
 .clearfix:after{content: " "; display: block; clear: both; height: 0;}
 .clearfix{zoom: 1;}
 .header{text-align:center;margin-top: 30px;margin-bottom: 80px;}
