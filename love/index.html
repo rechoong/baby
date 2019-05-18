@@ -5,8 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Love</title>
       <link rel="icon" type="image/x-icon" href="favicon.ico">
-     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"> 
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"> 
+           <!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
         <link type="text/css" rel="stylesheet" href="css/default.css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jscex.min.js"></script>
@@ -42,17 +42,17 @@
             <div id="wrap">
                <div id="text">
                     <div id="code">                 
-	<p>			    
-	 <!-- 为您的网站获取可定制的免费时钟小工具 https://time.is/widgets  -->
-      <a href="https://time.is/Shanghai" id="time_is_link" rel="nofollow" style="font-size:36px" title="时光如水，让时间沉淀一切，让时间洗涤尘埃，让时间过滤纷杂，让时间见证一切。">
-      <img src="https://img.shields.io/badge/时间-见证-brightgreen.svg" style="font-size:48px"/></a> 
-	<span id="Shanghai_z43d" style="font-size:36px"></span>
+				    
+	 <!-- 为您的网站获取可定制的免费<p>时钟小工具 https://time.is/widgets  -->
+      <a href="https://time.is/Shanghai" id="time_is_link" rel="nofollow" style="font-size:24px" title="时光如水，让时间沉淀一切，让时间洗涤尘埃，让时间过滤纷杂，让时间见证一切。">
+      <img src="https://img.shields.io/badge/时间-见证-brightgreen.svg" style="font-size:36px"/></a> 
+	<span id="Shanghai_z43d" style="font-size:24px"></span>
 	<script src="//widget.time.is/zh.js"></script>
 	<script>
 	time_is_widget.init({Shanghai_z43d:{template:"DATE TIME", date_format:"year-monthnum-daynum"}});
 	</script>      	
-          <!-- 为您的网站获取可定制的免费时钟小工具 https://time.is/widgets  -->
-	</p>
+          <!-- 为您的网站获取可定制的免费</p>时钟小工具 https://time.is/widgets  -->
+	
 	<br>
 	<span class="say">在没风的地方找太阳</span><br>
 	<span class="say">在你冷的地方做暖阳</span><br>
@@ -82,15 +82,10 @@
        【马良】歌手简介
                                                                           
            国籍：中国
-
            出生地：新疆
-
            出生日期：1990年
-
            职业：歌手
-
            代表作：往后余生、醒着醉、不甘
-
            简介：
 	   
 	   马良，1990年出生于新疆，中国内地流行乐男歌手，毕业于新疆大学建筑学。
@@ -124,18 +119,15 @@
     <script>
     (function(){
         var canvas = $('#canvas');
-
         if (!canvas[0].getContext) {
             $("#error").show();
             return false;
         }
-
         var width = canvas.width();
         var height = canvas.height();
         
         canvas.attr("width", width);
         canvas.attr("height", height);
-
         var opts = {
             seed: {
                 x: width / 2 - 20,
@@ -171,12 +163,10 @@
                 speed: 10,
             }
         }
-
         var tree = new Tree(canvas[0], width, height, opts);
         var seed = tree.seed;
         var foot = tree.footer;
         var hold = 1;
-
         canvas.click(function(e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
@@ -193,7 +183,6 @@
             y = e.pageY - offset.top;
             canvas.toggleClass('hand', seed.hover(x, y));
         });
-
         var seedAnimate = eval(Jscex.compile("async", function () {
             seed.draw();
             while (hold) {
@@ -209,21 +198,18 @@
                 $await(Jscex.Async.sleep(10));
             }
         }));
-
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
                 tree.grow();
                 $await(Jscex.Async.sleep(10));
             } while (tree.canGrow());
         }));
-
         var flowAnimate = eval(Jscex.compile("async", function () {
             do {
                 tree.flower(2);
                 $await(Jscex.Async.sleep(10));
             } while (tree.canFlower());
         }));
-
         var moveAnimate = eval(Jscex.compile("async", function () {
             tree.snapshot("p1", 240, 0, 610, 680);
             while (tree.move("p1", 500, 0)) {
@@ -232,14 +218,12 @@
             }
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
-
             // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
-
         var jumpAnimate = eval(Jscex.compile("async", function () {
             var ctx = tree.ctx;
             while (true) {
@@ -249,7 +233,6 @@
                 $await(Jscex.Async.sleep(25));
             }
         }));
-
         var textAnimate = eval(Jscex.compile("async", function () {
             var together = new Date();
             together.setFullYear(2010, 5, 8);
@@ -257,7 +240,6 @@
             together.setMinutes(20);
             together.setSeconds(0);
             together.setMilliseconds(0);
-
             $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {
@@ -265,18 +247,14 @@
                 $await(Jscex.Async.sleep(1000));
             }
         }));
-
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
             $await(flowAnimate());
             $await(moveAnimate());
-
             textAnimate().start();
-
             $await(jumpAnimate());
         }));
-
         runAsync().start();
     })();
     </script>
