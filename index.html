@@ -18,8 +18,8 @@
 <body>
     <script>
     var d1 = new Date();
-    var d2 = new Date('2019-6-13 12:00:00');
-    s = d2;
+    var d2 = new Date('2029-6-13 00:00:00');
+    s = d2-d1;
     $(document).ready(function() {
 	$('#counter').countdown({
 		timestamp : (new Date()).getTime() + s
